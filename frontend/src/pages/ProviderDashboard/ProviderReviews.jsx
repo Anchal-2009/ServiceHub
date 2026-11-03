@@ -12,7 +12,7 @@ import {
 
 import Sidebar from "../../components/Sidebar";
 import { apiRequest } from "../../services/api";
-import "../../styles/Providerdashboard.css";
+import "../../styles/ProviderDashboard.css";
 
 const ratingFilters = [
   "All Ratings",
