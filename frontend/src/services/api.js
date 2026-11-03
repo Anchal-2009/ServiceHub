@@ -1,11 +1,9 @@
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "/api";
 
 export const apiRequest = async (endpoint, options = {}) => {
   const { headers = {}, ...otherOptions } = options;
 
   const isFormData = otherOptions.body instanceof FormData;
-
   const token = localStorage.getItem("token");
 
   const response = await fetch(`${API_BASE_URL}${endpoint}`, {
