@@ -1,0 +1,274 @@
+.app-sidebar {
+  width: 245px;
+  min-width: 245px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #102a40;
+  color: #dce6f1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.app-sidebar::-webkit-scrollbar-thumb {
+  background: #294861;
+  border-radius: 5px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  min-height: 72px;
+}
+
+.sidebar-brand {
+  min-height: 72px;
+  padding: 0 21px;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+}
+
+.sidebar-logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1769f6;
+}
+
+.sidebar-logo-text {
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+
+.sidebar-logo-text span {
+  color: #1769f6;
+}
+
+.sidebar-navigation {
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sidebar-link {
+  min-height: 46px;
+  padding: 0 13px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 6px;
+  color: #c2d0df;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.sidebar-link svg {
+  flex-shrink: 0;
+  color: #b4c6d7;
+}
+
+.sidebar-link:hover {
+  background: #193e5b;
+  color: #ffffff;
+}
+
+.sidebar-link-active {
+  background: #1675f9;
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(0, 91, 220, 0.2);
+}
+
+.sidebar-link-active svg {
+  color: #ffffff;
+}
+
+.sidebar-link-active:hover {
+  background: #0969ee;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  padding: 12px 10px 20px;
+}
+
+.sidebar-logout {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 13px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #c2d0df;
+  font-family: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.sidebar-logout:hover {
+  background: #193e5b;
+  color: #ffffff;
+}
+
+.mobile-menu-button {
+  display: none;
+}
+
+/* Tablet */
+@media (max-width: 1000px) and (min-width: 769px) {
+  .app-sidebar {
+    width: 220px;
+    min-width: 220px;
+  }
+
+  .sidebar-brand {
+    padding: 0 16px;
+  }
+}
+
+/* Mobile: header at the top, navigation expands underneath */
+@media (max-width: 768px) {
+  .app-sidebar {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 0;
+    position: relative;
+    top: auto;
+    z-index: 100;
+    overflow: visible;
+    padding: 0;
+    border-bottom: 1px solid #294861;
+  }
+
+  .sidebar-header {
+    width: 100%;
+    min-height: 76px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    justify-content: space-between;
+  }
+
+  .sidebar-brand {
+    min-height: 76px;
+    padding: 0;
+  }
+
+  .sidebar-logo-text {
+    font-size: 20px;
+  }
+
+  .mobile-menu-button {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: #ffffff;
+    font-size: 23px;
+    cursor: pointer;
+  }
+
+  .mobile-menu-button:hover {
+    background: #193e5b;
+  }
+
+  .sidebar-navigation {
+    display: none;
+    width: 100%;
+    padding: 8px 16px 16px;
+    box-sizing: border-box;
+    gap: 4px;
+  }
+
+  .sidebar-navigation.navigation-open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-link {
+    width: 100%;
+    min-height: 42px;
+    box-sizing: border-box;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+
+  .sidebar-bottom {
+    display: none;
+  }
+
+  .app-sidebar.mobile-menu-open .sidebar-bottom {
+    display: block;
+    padding: 8px 16px 16px;
+  }
+
+  .app-sidebar.mobile-menu-open .sidebar-bottom .sidebar-logout {
+    min-height: 42px;
+    padding: 0 12px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .sidebar-header {
+    min-height: 68px;
+    padding: 0 12px;
+  }
+
+  .sidebar-brand {
+    min-height: 68px;
+  }
+
+  .sidebar-logo {
+    gap: 7px;
+  }
+
+  .sidebar-logo-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .sidebar-logo-text {
+    font-size: 19px;
+  }
+
+  .mobile-menu-button {
+    width: 36px;
+    height: 36px;
+    font-size: 21px;
+  }
+
+  .sidebar-navigation {
+    padding: 6px 12px 14px;
+  }
+}
